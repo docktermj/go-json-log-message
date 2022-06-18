@@ -24,7 +24,7 @@ target/linux:
 	@mkdir -p $(TARGET_DIRECTORY)/linux || true
 
 
-target/linux/message-example: target/linux
+target/linux/$(PROGRAM_NAME): target/linux
 	GOOS=linux \
 	GOARCH=amd64 \
 	go build \
@@ -34,7 +34,7 @@ target/linux/message-example: target/linux
 			-X main.buildVersion=${BUILD_VERSION} \
 			-X main.buildIteration=${BUILD_ITERATION} \
 			" \
-		-o $(TARGET_DIRECTORY)/linux/message-example
+		-o $(TARGET_DIRECTORY)/linux/$(PROGRAM_NAME)
 
 
 # -----------------------------------------------------------------------------
@@ -53,7 +53,7 @@ dependencies:
 
 .PHONY: build
 build: dependencies \
-	target/linux/message-example
+	target/linux/$(PROGRAM_NAME)
 
 
 # -----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ test:
 
 .PHONY: run
 run:
-	@target/linux/message-example
+	@target/linux/$(PROGRAM_NAME)
 
 # -----------------------------------------------------------------------------
 # Utility targets

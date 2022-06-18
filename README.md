@@ -49,5 +49,13 @@ For examples of use, see:
     make build
     ```
 
-   The output file will be at `target/linux/message-example`.
+   The output file will be at `target/linux/go-json-log-message`.
+
+
+1. To clean up.
+   Example:
+
+    ```console
+    make clean
+    ```
 
