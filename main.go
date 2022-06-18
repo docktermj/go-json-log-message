@@ -19,4 +19,13 @@ var buildIteration string = "0"
 func main() {
 	aMessage := message.BuildMessage("A", "B", "C", "D", programName, buildVersion, buildIteration)
 	fmt.Println(aMessage)
+
+	detailsMap := map[string]string{
+		"programName":    programName,
+		"buildVersion":   buildVersion,
+		"buildIteration": buildIteration,
+	}
+	anotherMessage := message.BuildMessageUsingMap("E", "F", detailsMap)
+	fmt.Println(anotherMessage)
+
 }

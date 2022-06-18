@@ -16,6 +16,8 @@ When pretty printed, the messages have the following format:
 }
 ```
 
+## Usage
+
 To import the go package:
 
 ```go
@@ -29,3 +31,23 @@ For examples of use, see:
 
 1. [main.go](main.go)
 1. [message_test.go](message/message_test.go)
+
+
+## Development
+
+1. To run unit test cases.
+   Example:
+
+    ```console
+    make test
+    ```
+
+1. To build `main.go`.
+   Example:
+
+    ```console
+    make build
+    ```
+
+   The output file will be at `target/linux/message-example`.
+
