@@ -10,8 +10,8 @@ When pretty printed, the messages have the following format:
     "id": "a-unique-message-id",
     "text": "Explanation of the error",
     "details": {
-        "FirstVariable": "First value",
-        "SecondVariable": "Second value"
+        "firstVariable": "First value",
+        "secondVariable": "Second value"
     }
 }
 ```
