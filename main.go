@@ -25,7 +25,7 @@ func main() {
 		"buildVersion":   buildVersion,
 		"buildIteration": buildIteration,
 	}
-	anotherMessage := message.BuildMessageUsingMap("E", "F", detailsMap)
+	anotherMessage := message.BuildMessageUsingMap("E", "F", "G", detailsMap)
 	fmt.Println(anotherMessage)
 
 }
