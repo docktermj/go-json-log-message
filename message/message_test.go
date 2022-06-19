@@ -18,7 +18,17 @@ func TestBuildMessage(test *testing.T) {
 }
 
 func TestBuildMessageNoDetails(test *testing.T) {
-	actual := BuildMessage("A", "B")
+	actual := BuildMessage("A", "B", "C")
+	fmt.Println(actual)
+}
+
+func TestBuildMessageNoMessage(test *testing.T) {
+	actual := BuildMessage("A", "B", "")
+	fmt.Println(actual)
+}
+
+func TestBuildMessageNoLevel(test *testing.T) {
+	actual := BuildMessage("A", "", "")
 	fmt.Println(actual)
 }
 
@@ -27,6 +37,6 @@ func TestBuildMessageUsingMap(test *testing.T) {
 		"FirstVariable":  "First value",
 		"SecondVariable": "Second value",
 	}
-	actual := BuildMessageUsingMap("A", "B", detailsMap)
+	actual := BuildMessageUsingMap("A", "B", "C", detailsMap)
 	fmt.Println(actual)
 }
