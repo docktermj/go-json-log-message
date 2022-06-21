@@ -40,3 +40,25 @@ func TestBuildMessageUsingMap(test *testing.T) {
 	actual := BuildMessageUsingMap("A", "B", "C", detailsMap)
 	fmt.Println(actual)
 }
+
+func TestParseMessage(test *testing.T) {
+	message := BuildMessage("A", "B", "C", "D")
+	parsedMessage := ParseMessage(message)
+
+	fmt.Println(parsedMessage.Level)
+}
+
+func TestParseMessageUsingMap(test *testing.T) {
+	detailsMap := map[string]string{
+		"FirstVariable":  "First value",
+		"SecondVariable": "Second value",
+	}
+	message := BuildMessageUsingMap("A", "B", "C", detailsMap)
+	parsedMessage := ParseMessage(message)
+	details, ok := parsedMessage.Details.(map[string]interface{})
+	if !ok {
+		fmt.Printf("Error: %t", ok)
+	}
+
+	fmt.Println(details["FirstVariable"])
+}

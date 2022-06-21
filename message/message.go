@@ -66,3 +66,10 @@ func BuildMessageUsingMap(id string, level string, text string, details map[stri
 	result, _ := json.Marshal(resultStruct)
 	return string(result)
 }
+
+// Parse JSON message.
+func ParseMessage(jsonString string) Message {
+	var message Message
+	json.Unmarshal([]byte(jsonString), &message)
+	return message
+}
